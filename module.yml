@@ -1,0 +1,14 @@
+---
+- name: this is describing module server
+  hosts: all
+  tasks:
+    - name: this is my first task
+      command: hostname -i
+    - name: this is my second task
+      file:
+        path: /tmp/abhi.txt
+        owner: root
+        group: root
+        state: touch
+        mode: '600'
+

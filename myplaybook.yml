@@ -1,0 +1,9 @@
+---
+- name: this is my first playbook
+  hosts: dev
+  tasks:
+    - name: this is hostname verification
+      command: hostname -i
+    - name: this is my mount verification
+      command: df -hT
+

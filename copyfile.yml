@@ -1,0 +1,20 @@
+---
+- name: describe all servers
+  hosts: all
+  tasks:
+    - name: this is my first copy tasks1
+      copy:
+        src: /etc/hosts
+        dest: /etc/hosts
+        owner: root
+        group: root
+        mode: '0644'
+    - name: working with script module (task2)
+      script: ./myscript.sh
+    - name: working with python script (task2)
+      script: ./mycode.py
+      register: myoutput
+    - name: working with debug module (task4)
+      debug: msg="{{myoutput.stdout_lines[10]}}" 
+
+    
